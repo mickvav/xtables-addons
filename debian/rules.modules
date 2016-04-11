@@ -2,7 +2,7 @@
 # -*- makefile -*-
 
 # Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+export DH_VERBOSE=1
 
 MAKEARGS= -C $(KSRC) M=$(CURDIR)/extensions XA_ABSTOPSRCDIR=$(CURDIR) XA_TOPSRCDIR=$(CURDIR) DEPMOD=/bin/true
 
