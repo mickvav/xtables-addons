@@ -15,9 +15,7 @@ Package: xtables-addons-common
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: xtables-addons-dkms
-# "unzip" and "wget" are used by `xt_geoip_dl`.
-           ,unzip, wget
+Recommends: unzip,wget
 Suggests: libtext-csv-xs-perl
 Provides: xtables-addons-common-${source:Upstream-Version}
 Breaks: ipset (<< 6.11~)
@@ -34,6 +32,10 @@ Description: Extensions targets and matches for iptables [tools, libs]
  package, which you may produce with module-assistant:
  .
    module-assistant auto-install xtables-addons-source
+ .
+ This exact version already has kernel modules,  compiled against specific kernel.
+ Explicit dependency on dkms is removed, thus one need to recompile this package 
+ in vyos build tree together with new kernel.
 
 Package: xtables-addons-dkms
 Section: kernel
